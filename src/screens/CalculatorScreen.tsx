@@ -1,6 +1,7 @@
 import React from 'react'
 import { Pressable, Text, View } from 'react-native'
-import { styles } from '../config/theme/app-theme'
+import { colors, styles } from '../config/theme/app-theme'
+import { CalculatorBotton } from '../components/CalculatorBotton'
 
 export const CalculatorScreen = () => {
   return (
@@ -15,14 +16,57 @@ export const CalculatorScreen = () => {
 
 <View style={styles.row}>
 
-<Pressable style={styles.button}>
-  <Text style={styles.buttonText}> 1 </Text>
-</Pressable>
 
-
+<CalculatorBotton blackText label="C" color={colors.lightGray}/>
+<CalculatorBotton blackText label="+/-" color={colors.lightGray}/>
+<CalculatorBotton blackText label="%" color={colors.lightGray}/>
+<CalculatorBotton label="÷" color={colors.orange}/>
 
 
 </View>
+<View style={styles.row}>
+
+
+<CalculatorBotton label="7" />
+<CalculatorBotton label="8" />
+<CalculatorBotton label="9" />
+<CalculatorBotton label="X" color={colors.orange}/>
+
+
+</View>
+<View style={styles.row}>
+
+
+<CalculatorBotton label="4" />
+<CalculatorBotton label="5"/>
+<CalculatorBotton label="6" />
+<CalculatorBotton label="-" color={colors.orange} />
+
+
+</View>
+<View style={styles.row}>
+
+
+<CalculatorBotton label="1"/>
+<CalculatorBotton label="2" />
+<CalculatorBotton label="3" />
+<CalculatorBotton label="+" color={colors.orange}/>
+
+
+</View>
+
+<View style={styles.row}>
+
+
+
+<CalculatorBotton label="0" doubleSize/>
+<CalculatorBotton label="." />
+<CalculatorBotton label="=" color={colors.orange}/>
+
+
+</View>
+
+
 
 
 </View>

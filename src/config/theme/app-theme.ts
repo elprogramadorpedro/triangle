@@ -47,7 +47,7 @@ row:{
 flexDirection:'row',
 justifyContent:'center',
 marginBottom:18,
-paddingHorizontal:10
+paddingHorizontal:20
 },
 
 button:{
