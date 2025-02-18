@@ -1,7 +1,7 @@
 import React from 'react'
-import { Pressable, Text, View } from 'react-native'
+import { Text, View } from 'react-native'
 import { colors, styles } from '../config/theme/app-theme'
-import { CalculatorBotton } from '../components/CalculatorBotton'
+import { CalculatorBotton }   from '../components/CalculatorBotton'
 
 export const CalculatorScreen = () => {
   return (
@@ -17,40 +17,40 @@ export const CalculatorScreen = () => {
 <View style={styles.row}>
 
 
-<CalculatorBotton blackText label="C" color={colors.lightGray}/>
-<CalculatorBotton blackText label="+/-" color={colors.lightGray}/>
-<CalculatorBotton blackText label="%" color={colors.lightGray}/>
-<CalculatorBotton label="÷" color={colors.orange}/>
+<CalculatorBotton  onPress={()=> console.log('C')} blackText label="C" color={colors.lightGray}/>
+<CalculatorBotton onPress={()=> console.log('+/-')}  blackText label="+/-" color={colors.lightGray}/>
+<CalculatorBotton onPress={()=> console.log('%')}  blackText label="%" color={colors.lightGray}/>
+<CalculatorBotton onPress={()=> console.log('÷')}  label="÷" color={colors.orange}/>
 
 
 </View>
 <View style={styles.row}>
 
 
-<CalculatorBotton label="7" />
-<CalculatorBotton label="8" />
-<CalculatorBotton label="9" />
-<CalculatorBotton label="X" color={colors.orange}/>
+<CalculatorBotton onPress={()=> console.log('7')}  label="7" />
+<CalculatorBotton onPress={()=> console.log('8')}  label="8" />
+<CalculatorBotton onPress={()=> console.log('9')}  label="9" />
+<CalculatorBotton onPress={()=> console.log('X')}  label="X" color={colors.orange}/>
 
 
 </View>
 <View style={styles.row}>
 
 
-<CalculatorBotton label="4" />
-<CalculatorBotton label="5"/>
-<CalculatorBotton label="6" />
-<CalculatorBotton label="-" color={colors.orange} />
+<CalculatorBotton onPress={()=> console.log('4')}  label="4" />
+<CalculatorBotton onPress={()=> console.log('5')}  label="5"/>
+<CalculatorBotton onPress={()=> console.log('6')}  label="6" />
+<CalculatorBotton onPress={()=> console.log('-')}  label="-" color={colors.orange} />
 
 
 </View>
 <View style={styles.row}>
 
 
-<CalculatorBotton label="1"/>
-<CalculatorBotton label="2" />
-<CalculatorBotton label="3" />
-<CalculatorBotton label="+" color={colors.orange}/>
+<CalculatorBotton onPress={()=> console.log('1')}  label="1"/>
+<CalculatorBotton onPress={()=> console.log('2')}  label="2" />
+<CalculatorBotton onPress={()=> console.log('3')}  label="3" />
+<CalculatorBotton onPress={()=> console.log('+')}  label="+" color={colors.orange}/>
 
 
 </View>
@@ -59,9 +59,9 @@ export const CalculatorScreen = () => {
 
 
 
-<CalculatorBotton label="0" doubleSize/>
-<CalculatorBotton label="." />
-<CalculatorBotton label="=" color={colors.orange}/>
+<CalculatorBotton onPress={()=> console.log('0')}  label="0" doubleSize/>
+<CalculatorBotton onPress={()=> console.log('.')}  label="." />
+<CalculatorBotton onPress={()=> console.log('=')}  label="=" color={colors.orange}/>
 
 
 </View>
