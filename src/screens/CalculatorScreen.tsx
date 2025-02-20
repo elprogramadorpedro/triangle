@@ -8,7 +8,8 @@ export const CalculatorScreen = () => {
 
   const {
     //properties
-   number, buildNumber
+   number, buildNumber,tooggleSign,
+   clean, deleteOperation,
 
 
 
@@ -33,10 +34,11 @@ export const CalculatorScreen = () => {
 <View style={styles.row}>
 
 
-<CalculatorBotton  onPress={()=> console.log('C')} blackText label="C" color={colors.lightGray}/>
-<CalculatorBotton onPress={()=> console.log('+/-')}  blackText label="+/-" color={colors.lightGray}/>
-<CalculatorBotton onPress={()=> console.log('%')}  blackText label="%" color={colors.lightGray}/>
-<CalculatorBotton onPress={()=> console.log('÷')}  label="÷" color={colors.orange}/>
+<CalculatorBotton  onPress={clean} blackText label="C" color={colors.lightGray}/>
+<CalculatorBotton onPress={tooggleSign}  blackText label="+/-" color={colors.lightGray}/>
+{/*<CalculatorBotton onPress={()=> console.log('+/-')}  blackText label="+/-" color={colors.lightGray}/>*/}
+<CalculatorBotton onPress={deleteOperation}  blackText label="del" color={colors.lightGray}/>
+<CalculatorBotton onPress={()=> console.log('/')}  label="/" color={colors.orange}/>
 </View>
 <View style={styles.row}>
 
@@ -44,7 +46,7 @@ export const CalculatorScreen = () => {
 <CalculatorBotton onPress={()=> buildNumber('7')}  label="7" />
 <CalculatorBotton onPress={()=> buildNumber('8')}  label="8" />
 <CalculatorBotton onPress={()=> buildNumber('9')}  label="9" />
-<CalculatorBotton onPress={()=> console.log('X')}  label="X" color={colors.orange}/>
+<CalculatorBotton onPress={()=> console.log('÷')}  label="÷" color={colors.orange}/>
 
 
 </View>
