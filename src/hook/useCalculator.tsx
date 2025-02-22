@@ -1,48 +1,52 @@
-import {useState} from 'react';
+import {useRef, useState} from 'react';
+
+//enum de operaciones 
+enum Operator{
+  add,
+  subtract,
+  multiply,
+  divide,
+}
+
+
+
 
 export const useCalculator = () => {
   const [number, setNumber] = useState('0');
+  const [prevNumber, setPrevNumber] = useState('0');
 
-//metodo para limpiar todos los numero y llevarlos a cero
+  const lastOperation = useRef<Operator>();
 
-const clean =()=>{
-  setNumber('0')
-}
+  //metodo para limpiar todos los numero y llevarlos a cero
 
-//borrar ultimo numero 
+  const clean = () => {
+    setNumber('0');
+    setPrevNumber('0');
+  };
 
-const deleteOperation =()=>{
+  //borrar ultimo numero
 
-  let currentSign = '';
-  let temporalNumber = number;
+  const deleteOperation = () => {
+    let currentSign = '';
+    let temporalNumber = number;
 
-  if(number.includes('-')){
-    currentSign = '-';
-    temporalNumber = number.substring(1); 
-  }
+    if (number.includes('-')) {
+      currentSign = '-';
+      temporalNumber = number.substring(1);
+    }
 
-  if(temporalNumber.length>1){
-    return setNumber(currentSign + temporalNumber.slice(0,-1))
-  }
-  setNumber('0')
+    if (temporalNumber.length > 1) {
+      return setNumber(currentSign + temporalNumber.slice(0, -1));
+    }
+    setNumber('0');
+  };
 
-
-
-
-}
-
-
-
-
-const tooggleSign = () =>{
-  if(number.includes('-')){
-    return setNumber(number.replace('-',''))
-  }
-  setNumber('-'+number)
-}
-
-
-
+  const tooggleSign = () => {
+    if (number.includes('-')) {
+      return setNumber(number.replace('-', ''));
+    }
+    setNumber('-' + number);
+  };
 
   const buildNumber = (numberString: string) => {
     if (number.includes('.') && numberString === '.') return;
@@ -73,14 +77,54 @@ const tooggleSign = () =>{
     setNumber(number + numberString);
   };
 
+
+//funcion setLasNumber
+
+
+const setLastNumber = () =>{
+    if(number.endsWith('.')){
+       setPrevNumber(number.slice(0,-1));
+    }else{
+  setPrevNumber(number);
+}
+setNumber('0') 
+}
+
+const divideOperation = () =>{
+  setLastNumber();
+  lastOperation.current=Operator.divide
+}
+  
+const multiplyOperation = () =>{
+  setLastNumber();
+  lastOperation.current=Operator.multiply
+}
+  
+const subTractOperation = () =>{
+  setLastNumber();
+  lastOperation.current=Operator.subtract
+}
+  
+const addOperation = () =>{
+  setLastNumber();
+  lastOperation.current=Operator.add
+}
+  
+
+
   return {
     //PROPIEDADES
     number,
+    prevNumber,
 
     //METODOS
     buildNumber,
     tooggleSign,
     clean,
     deleteOperation,
+    divideOperation,
+multiplyOperation,
+subTractOperation,
+addOperation,
   };
 };
