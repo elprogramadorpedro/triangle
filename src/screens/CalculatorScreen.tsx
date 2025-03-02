@@ -12,10 +12,10 @@ export const CalculatorScreen = () => {
    number,
    formula,
    
-   buildNumber,tooggleSign,
+   buildNumber,toggleSign,
    clean, deleteOperation, divideOperation,
    multiplyOperation,
-   subTractOperation,
+   subtractOperation,
    addOperation,
    calculateResult,
    
@@ -57,7 +57,7 @@ export const CalculatorScreen = () => {
 
 
 <CalculatorBotton  onPress={clean} blackText label="C" color={colors.lightGray}/>
-<CalculatorBotton onPress={tooggleSign}  blackText label="+/-" color={colors.lightGray}/>
+<CalculatorBotton onPress={toggleSign}  blackText label="+/-" color={colors.lightGray}/>
 {/*<CalculatorBotton onPress={()=> console.log('+/-')}  blackText label="+/-" color={colors.lightGray}/>*/}
 <CalculatorBotton onPress={deleteOperation}  blackText label="del" color={colors.lightGray}/>
 <CalculatorBotton onPress={divideOperation}  label="÷" color={colors.orange}/>
@@ -79,7 +79,7 @@ export const CalculatorScreen = () => {
 <CalculatorBotton onPress={()=> buildNumber('5')}  label="5"/>
 <CalculatorBotton onPress={()=> buildNumber('6')}  label="6" />
  {/* <CalculatorBotton onPress={()=> console.log('-')}  label="-" color={colors.orange} />*/}
- <CalculatorBotton onPress={subTractOperation}  label="-" color={colors.orange} />
+ <CalculatorBotton onPress={subtractOperation}  label="-" color={colors.orange} />
 
 </View>
 <View style={styles.row}>

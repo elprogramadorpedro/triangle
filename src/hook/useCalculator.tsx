@@ -15,6 +15,7 @@ export const useCalculator = () => {
   const [ formula, setFormula ] = useState( '' );
 
   const [ number, setNumber ] = useState( '0' );
+
   const [ prevNumber, setPrevNumber ] = useState( '0' );
 
   const lastOperation = useRef<Operator>();
@@ -35,10 +36,6 @@ export const useCalculator = () => {
     setPrevNumber( `${ subResult }`);    
   }, [formula])
   
-
-
-
-
 
   const clean = () => {
     setNumber( '0' );
