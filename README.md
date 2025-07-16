@@ -1,10 +1,15 @@
 # 📱 Tringle Calculator
 
-Tringle Calculator é uma calculadora mobile inspirada na estética do iOS, desenvolvida 100% em **React Native com Bare Cli**. O app foi criado com foco em **componentes reutilizáveis**, **hooks personalizados**, **lógica matemática clara** e **estilo responsivo com Flexbox**.
+Tringle Calculator é uma calculadora mobile inspirada na estética do iOS, desenvolvida 100% em **React Native com Bare CLI**. O app foi criado com foco em **componentes reutilizáveis**, **hooks personalizados**, **lógica matemática clara** e **estilo responsivo com Flexbox**.
 
 Este projeto demonstra como criar uma aplicação funcional do zero, com arquitetura modular e pronta para escalar, ideal para quem busca aprender ou contratar desenvolvedores mobile com experiência prática.
 
 ---
+
+<p align="center">
+  <img src="./assets/logotriangle.png" width="250" alt="Logo Tringle Calculator" />
+  <img src="./assets/screencalculo.png" width="250" alt="Tela da calculadora em funcionamento" />
+</p>
 
 ## ✨ Funcionalidades
 
